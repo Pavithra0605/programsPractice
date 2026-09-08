@@ -1,8 +1,4 @@
 
-ALLAMPATI SNEHA LATHA (RMD AIML DEPT - 2025) <25al005@rmd.ac.in>
-12:45 PM (45 minutes ago)
-to me
-
 #include<iostream>
  #include<vector>
  using namespace std;
