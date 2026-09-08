@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 #include<algorithm>
 #include<vector>
 #include<map>
@@ -7,20 +7,22 @@
 using namespace std;
 #define ll long long int
 void solve() {
-    int N; cin >> N;
-    vector<int> arr(N);
-    for(int i = 0;i < N;i++) cin >> arr[i];
-    int lt = 0,rt = N - 1;
-    while(lt < N && arr[lt] == 0) lt++;
-    while(rt >= 0 && arr[rt] == 0) rt--;
-    if(lt <= rt) {
-        for(int i = lt + 1;i < rt;i++) {
-            if(arr[i] == -1) arr[i]=0;
+    int N,K;cin >> N >> K;
+    string s;cin >> s;
+    int F = N/K;
+    vector<bool> own(F,false);
+    for(unsigned int i = 0;i < s.size();i++) {
+        if(s[i] == '0') {
+            int farmidx = i/K;
+            own[farmidx] = true;
         }
-        arr[lt] = arr[rt] = 1;
     }
-    for(int i = 0;i < N;i++) cout << arr[i] << (i == N - 1 ? "\n":" ");
+    int count = 0;
+    for(int f = 0;f < F;f++) {
+        if(!own[f]) count++;
     }
+    cout << count << endl;
+}
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
