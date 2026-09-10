@@ -9,14 +9,14 @@ using namespace std;
 void solve(){
    ll x,y,z;
     cin>>x>>y>>z;
-    ll ans=0, ctr =0;
-    while(ctr<z){
-        ll rem=(y+ctr)%(x+ctr);
+    ll ans=0, count =0;
+    while(count<z){
+        ll rem=(y+count)%(x+count);
         if (rem == y-x)break;
-        ans+=rem; ctr++;
+        ans+=rem; count++;
     }
-   if(z>ctr){
-    ans+=(z-ctr)*(y-x);
+   if(z>count){
+    ans+=(z-count)*(y-x);
    }
    cout<<ans<<endl;}
  int main() {
